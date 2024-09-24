@@ -31,14 +31,15 @@ function studentMsg(totalScores, studentScore) {
   const classAverage = getAverage(totalScores);
   const studentGrade = getGrade(studentScore);
 
-  if (hasPassingGrade(studentGrade)) {
-    return `"Class average: ${classAverage.toFixed(
-      1
-    )}. Your grade: ${studentGrade}. You passed the course."`;
-  } else
-    return `"Class average: ${classAverage.toFixed(
-      1
-    )}. Your grade: ${studentGrade}. You failed the course."`;
+  if (hasPassingGrade(studentScore)) {
+    return "Class average: " + classAverage + 
+           ". Your grade: " + studentGrade + 
+           ". You passed the course.";
+  } else {
+    return "Class average: " + classAverage + 
+           ". Your grade: " + studentGrade + 
+           ". You failed the course.";
+  }
 }
 
 console.log(studentMsg([92, 88, 12, 77, 57, 100, 67, 38, 97, 89], 80));
